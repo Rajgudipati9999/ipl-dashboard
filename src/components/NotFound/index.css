@@ -1,0 +1,11 @@
+
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.not-found-heading{
+    font-size: 20px;
+    font-weight: bold;
+    color: #ddd;
+}

@@ -1,0 +1,41 @@
+
+.team-matches-bg {
+    min-height:100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+.team-banner{
+    width: 90vw;
+}
+.latest-matches-details-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.latest-matches-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.list-heading{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.latest-matches-heading {
+    color: #ddd;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-left: 40px;
+}
+.recent-match-container{
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
