@@ -8,13 +8,11 @@ html, body {
   padding: 0;
   overflow-x: hidden;
 }
-
 /* Media query for small screens */
 @media screen and (max-width: 550px) {
   body {
     margin: 0;
   }
 }
-
 
 /* Ensure no unintended margins or paddings on all elements */
