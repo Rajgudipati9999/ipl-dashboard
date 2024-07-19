@@ -7,14 +7,29 @@ import './index.css'
 const Home = () => {
 
   const [teams, setTeams] = useState(null);
+  const [error,setError] = useState(false)
+  const [isLoading , setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('https://apis.ccbp.in/ipl')
-      .then(response => response.json())
-      .then(data => setTeams(data.teams))
-      .catch(error => console.error('Error fetching data:', error));
+    const getTeams = async () => {
+    const url ='https://apis.ccbp.in/ipl'; 
+    const options = {
+      method :'GET'
+    }
+    const response = await fetch(url,options)
+    const data = await response.json()
+    if (response.ok) {
+        setTeams(data.teams)
+        setLoading(false)
+    }
+    else {
+      // setError(true)
+      setLoading(true)
+    }
+  }
+  getTeams();
   }, []);
-  console.log(teams);
+  // console.log(teams);
     return (
         <div className="home-bg">
                 <div className='ipl-heading-content'>
@@ -22,10 +37,11 @@ const Home = () => {
                     <h1 className='ipl-heading'>IPL Dashboard</h1>
                 </div>
                 <ul className='list-container'>
-                {teams ? teams.map(team => (<TeamCard team={team}/>)):<div testid="ColorRing"><ColorRing type="Oval" color="#ffffff" height={50} width={50} /></div>}
+                  {isLoading? <ColorRing height={50} width={50}/> : teams.map(team => (
+                    <TeamCard team={team}/>
+                  ))}
                 </ul>
         </div>
     )
 }
-
 export default Home;

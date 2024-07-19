@@ -2,7 +2,7 @@ import './index.css'
 
 const RecentMatch = ({eachMatch}) => {
     const {competing_team,competing_team_logo,result,match_status,id} = eachMatch 
-    console.log(match_status)
+    // console.log(match_status)
     const status = match_status === 'Won'?'#18ed66':' #e31a1a' 
     return (
         <li className="recent-matches-list">

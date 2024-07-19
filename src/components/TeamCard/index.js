@@ -4,6 +4,7 @@ import './index.css'
 const TeamCard = (props) => {
     const {team} = props 
     const {name,id,team_image_url} = team 
+    console.log(team)
     // console.log(team_image_url)
     return (
         <li className='team-card-list'>
